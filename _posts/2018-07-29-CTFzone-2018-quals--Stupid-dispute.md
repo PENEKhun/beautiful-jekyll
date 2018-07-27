@@ -29,7 +29,7 @@ published: true
 
 <img src="https://penekhun.github.io/img/WuIMG/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202018-07-28%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.07.42.png" alt="one" style="width: 200px;height:300px"/>
 
-러시아어는 번역기를 돌려보았지만, 별 의미가 없음을 알았고,
+러시아어는 번역기를 돌려보았지만, 별 의미가 없음을 알았고,  
 shark09@mail.ru는 당장은 아니지만 언젠가 쓰일지도 모른다.
 
 <img src="http://penekhun.github.io/img/WuIMG/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202018-07-28%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.07.37.png" alt="two" style="width: 500px;height:300px"/>
@@ -48,19 +48,19 @@ shark09@mail.ru는 당장은 아니지만 언젠가 쓰일지도 모른다.
 <http://dumpelqezarfife.onion.lu>를 접속하면,
 <img src="https://penekhun.github.io/img/WuIMG/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202018-07-28%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.39.56.png" alt="thr" style="width:700px; height:400px"/>
 
-다음과 같은 password dumped사이트를 볼수있다,
+다음과 같은 password dumped사이트를 볼수있다,  
 아이디/이메일를 입력하면 해킹된 database를 통해 password를 불러오는 사이트였다.
 
 
-우리는 아까 이메일정보를 간접적으로 획득 하였다.
+우리는 아까 이메일정보를 간접적으로 획득 하였다.  
 `shark09@mail.ru`
-이를 검색해보자.
+이를 검색해보자.  
 
 <img src="http://penekhun.github.io/img/WuIMG/shark09mailru.png" alt="fr" style="width:500px;heigth:300px"/>
 
-shark09@mail.ru에 해당하는 password가 fsdfdsfsd임을 알게되었다.
+shark09@mail.ru에 해당하는 password가 fsdfdsfsd임을 알게되었다.  
 
-이어서 <https://bit.ly/2LxsBJF>를 접속하면,
+이어서 <https://bit.ly/2LxsBJF>를 접속하면,  
 <img src="http://penekhun.github.io/img/WuIMG/pp.png" alt="six" style="width:700px; height:400px"/>
 
 >Hi, %username%! Let me share a piece of pie with you - here is a cool database, I still don't have such file in my collection. But the only problem here is that the file has not yet been parsed. I think I'll do it later.
@@ -76,7 +76,7 @@ shark09@mail.ru에 해당하는 password가 fsdfdsfsd임을 알게되었다.
 >나는 지금 SFTP서버에 올리고 있고, 천천히 onion사이트에 옮길거야.
 >링크는 타이틀에 있어. 사진은 낚시니깐 별 상관 마!
 
-일단 SFTP서버에 올리고 있다니깐 SFTP로 접속해보자.
+일단 SFTP서버에 올리고 있다니깐 SFTP로 접속해보자.  
 
 
 ```
@@ -92,7 +92,7 @@ remote readdir("/"): Permission denied
 ```
 
 
-아무런 권한도 없다.
+아무런 권한도 없다.  
 그래서 이번엔 ssh로 접속해보았다.
 ```
 $ ssh shark09@93.170.105.93
@@ -102,9 +102,8 @@ Could not chdir to home directory /sftp/s00zaran: Permission denied
 This service allows sftp connections only.
 Connection to 93.170.105.93 closed.
 ```
-s00zaran이라는 또다른 무언가가 있음을 암시해주고 connetion closed 되었다.
-
-이후 onion사이트에 올린다고 했고, 그 링크는 타이틀에 있다고 했다.
+s00zaran이라는 또다른 무언가가 있음을 암시해주고 connetion closed 되었다.  
+이후 onion사이트에 올린다고 했고, 그 링크는 타이틀에 있다고 했다.  
 ```
 view-source:http://93.170.105.93/
 
@@ -114,12 +113,12 @@ view-source:http://93.170.105.93/
         <meta name="language" content="en">
         .....
 ```
-타이틀이 dumpitl6ghazgb2n임을 확인했고, onion사이트 니깐
+타이틀이 dumpitl6ghazgb2n임을 확인했고, onion사이트 니깐  
 최종 링크는 `dumpitl6ghazgb2n.onion`이 되겠다.
 
 이 링크로 sftp를 한번 접속해 보겠다.  
 ## onion사이트라서 일반적으로 sftp접속 하면 안된다.  
-`tor &`  이후 `torify sftp ID@dumpitl6ghazgb2n.onion` 해주자.
+`tor &`  이후 `torify sftp ID@dumpitl6ghazgb2n.onion` 해주자.  
 
 
 
@@ -139,8 +138,8 @@ password : fsdfdsfsd
 Connected to s00zaran@dumpitl6ghazgb2n.onion.
 sftp> 
 ```
-연결이 되었다.
-이를 계정으로 ssh에 접속해 보았다.
+연결이 되었다.  
+이를 계정으로 ssh에 접속해 보았다.  
 
 ```
 $ torify ssh s00zaran@dumpitl6ghazgb2n.onion
