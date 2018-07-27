@@ -26,7 +26,7 @@ navbar-links:
   home: "https://penekhun.github.io/"
   whoami: "whoami"
   category:
-    - Study: "study"
+    - Study: "https://penekhun.github.io/study/"
     - Write Up: "writeup"
     - Research: "research"
   tags: "tags"
