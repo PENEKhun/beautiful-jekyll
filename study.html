@@ -15,13 +15,13 @@ title: 'Tag Index'
 {%- endfor -%} -->
 
 <div id="full-tags-list">
-{%- for "study" in tags_list -%}
+<!--{%- for "study" in tags_list -%}
     <h2 id="{{- tag -}}" class="linked-section">
         <i class="fa fa-tag" aria-hidden="true"></i>
         &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
     </h2>
-    <div class="post-list">
-        {%- for post in site.tags[tag] -%}
+    <div class="post-list"> -->
+        {%- for post in site.tags["study"] -%}
             <div class="tag-entry">
                 <a href="{{- site.url -}}{{- post.url -}}">{{- post.title -}}</a>
                 <div class="entry-date">
