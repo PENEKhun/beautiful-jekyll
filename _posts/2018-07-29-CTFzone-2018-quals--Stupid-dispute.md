@@ -12,7 +12,9 @@ published: true
 
 ### 문제정보
 `문제명: stupid dispute ` / `타입: OSINT`
->So, @inf073chk4, our dispute is still on! I've promised to hack all your hidden services and, believe me, I'll do it! Flag is: ctfzone{md5(flag)}
+>So, @inf073chk4,  
+our dispute is still on! I've promised to hack all your hidden services and, believe me, I'll do it!  
+Flag is: ctfzone{md5(flag)}
 
 
 ### 문제접근 방식
