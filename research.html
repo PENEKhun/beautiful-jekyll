@@ -1,0 +1,23 @@
+---
+layout: page
+title: 'Research'
+---
+
+{%- capture site_tags -%}
+    {%- for tag in site.tags -%}
+        {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- assign tags_list = site_tags | split:',' | sort -%}
+
+<div id="full-tags-list">
+        {%- for post in site.tags["research"] -%}
+            <div class="tag-entry">
+                <a href="{{- site.url -}}{{- post.url -}}">{{- post.title -}}</a>
+                <div class="entry-date">
+                    <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: "%B %d, %Y" -}}</time>
+                </div>
+            </div>
+        {%- endfor -%}
+    </div>
+</div>
