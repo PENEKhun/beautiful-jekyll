@@ -27,7 +27,7 @@ navbar-links:
   whoami: "whoami"
   category:
     - Study: "study"
-    - Writeup: "writeup"
+    - Write Up: "writeup"
     - Research: "research"
   tags: "tags"
 #    - Learn markdown: "http://www.markdowntutorial.com/"
