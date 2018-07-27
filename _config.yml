@@ -23,10 +23,10 @@ description: call myself a greatest hacker
 
 # List of links in the navigation bar
 navbar-links:
-  home: "/"
+  home: "https://penekhun.github.io/"
   whoami: "whoami"
   category:
-    - Study: "http://www.markdowntutorial.com/"
+    - Study: "study"
     - Writeup: "writeup"
     - Research: "research"
   tags: "tags"
