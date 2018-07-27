@@ -1,17 +1,21 @@
 ---
 layout: page
 title: whoami?
-subtitle: I want to be a great Hacker :>
+subtitle: 'I want to be a great Hacker :>'
 published: true
 ---
+Hi, nice to meet you.
+I am **Moon Seong Hun**, 19 years old and live in Korea.
 
-My name is Inigo Montoya. I have the following qualities:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+### Contact information:
+
+Email: penekhun@gmail.com
+Facebook: facebook.com/penekhun
+Github: instagram.com/kgv0vc
+
+
+My Another Blog: http://penek.tistory.com
+
 
 What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
