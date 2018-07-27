@@ -25,10 +25,10 @@ description: call myself a greatest hacker
 navbar-links:
   home: "/"
   whoami: "whoami"
-  Menu: "tags"
+  Menus: "tags"
   	- Study : "study"
-  	- Writeup : "writeup"
-  	- Research : "research"
+    - Writeup : "writeup"
+    - Research : "research"
 #    - Learn markdown: "http://www.markdowntutorial.com/"
 #  Tistory : "http://penek.tistory.com"
   
