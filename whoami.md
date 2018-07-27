@@ -1,6 +1,6 @@
 ---
 layout: page
-title: #whoami
+title: whoami?
 subtitle: I want to be a great Hacker :>
 published: true
 ---
