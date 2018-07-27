@@ -26,7 +26,11 @@ navbar-links:
   home: "/"
   whoami: "whoami"
   category:
-    - Learn markdown: "http://www.markdowntutorial.com/"
+  	- Study: "http://www.markdowntutorial.com/"
+    - Writeup: "writeup"
+    - Research: "research"
+  tags: "tags"
+#    - Learn markdown: "http://www.markdowntutorial.com/"
 #  Tistory : "http://penek.tistory.com"
   
 
