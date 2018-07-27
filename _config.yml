@@ -25,11 +25,11 @@ description: call myself a greatest hacker
 navbar-links:
   home: "https://penekhun.github.io/"
   whoami: "whoami"
-  category:
-    - Study: "https://penekhun.github.io/study/"
+  tags:
+    - Study: "study"
     - Write Up: "writeup"
     - Research: "research"
-  tags: "tags"
+#  tags: "tags"
 #    - Learn markdown: "http://www.markdowntutorial.com/"
 #  Tistory : "http://penek.tistory.com"
   
