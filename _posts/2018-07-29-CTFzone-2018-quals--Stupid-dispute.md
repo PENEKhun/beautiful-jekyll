@@ -1,6 +1,8 @@
 ---
 layout: post
 title: CTFzone 2018 quals - Stupid dispute
+subtitle: CTFzone 2018 quals - Stupid dispute
+use-sub-title: False
 tags:
   - writeup
   - OSINT
