@@ -17,10 +17,10 @@ published: true
 
 ### 문제접근 방식
 1. @inf073chk4와 관련된 정보를 SNS검색
-1.twitter, telegram, facebook ... and so on
-2. 해당 계정에서 얻을 수 있는 정보가 무엇인지 확인한다
-1.account information, posts ... and so on
-3. 문제내용을 토대로 공개 정보를 사용한다
+  1. twitter, telegram, facebook ... and so on
+1. 해당 계정에서 얻을 수 있는 정보가 무엇인지 확인한다
+  1. account information, posts ... and so on
+1. 문제내용을 토대로 공개 정보를 사용한다
 
 ### 풀이
 
