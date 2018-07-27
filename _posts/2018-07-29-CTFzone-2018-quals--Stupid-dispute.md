@@ -4,17 +4,17 @@ title: CTFzone 2018 quals - Stupid dispute
 subtitle: Stupid dispute write up
 tags:
   - writeup
-  - osint
+  - OSINT
 published: true
 ---
 
 
-###문제정보
+### 문제정보
 `문제명: stupid dispute ` / `타입: OSINT`
 >So, @inf073chk4, our dispute is still on! I've promised to hack all your hidden services and, believe me, I'll do it! Flag is: ctfzone{md5(flag)}
 
 
-###문제접근 방식
+### 문제접근 방식
 1. @inf073chk4와 관련된 정보를 SNS검색
 1.twitter, telegram, facebook ... and so on
 2. 해당 계정에서 얻을 수 있는 정보가 무엇인지 확인한다
@@ -46,6 +46,7 @@ shark09@mail.ru는 당장은 아니지만 언젠가 쓰일지도 모른다.
 
 <http://dumpelqezarfife.onion.lu>를 접속하면,
 <img src="https://penekhun.github.io/img/WuIMG/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202018-07-28%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.39.56.png" alt="thr" style="width:700px; height:400px"/>
+
 다음과 같은 password dumped사이트를 볼수있다,
 아이디/이메일를 입력하면 해킹된 database를 통해 password를 불러오는 사이트였다.
 
