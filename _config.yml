@@ -23,7 +23,7 @@ description: call myself a greatest hacker
 
 # List of links in the navigation bar
 navbar-links:
-  home: "https://penekhun.github.io/"
+  home: ""
   whoami: "whoami"
   tags:
     - Study: "study"
