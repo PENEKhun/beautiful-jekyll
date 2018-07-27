@@ -2,7 +2,7 @@
 layout: post
 title: CTFzone 2018 quals - Stupid dispute
 subtitle: CTFzone 2018 quals - Stupid dispute
-use-sub-title: False
+excerpt: OSINT유형의 stupid dispute문제의 라이트업 입니다.
 tags:
   - writeup
   - OSINT
