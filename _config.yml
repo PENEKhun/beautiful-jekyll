@@ -23,7 +23,7 @@ description: call myself a greatest hacker
 
 # List of links in the navigation bar
 navbar-links:
-  home: ""
+  home: "/"
   whoami: "whoami"
   Study : "study"
   Writeup : "writeup"
