@@ -24,7 +24,7 @@ published: true
 
 ### 풀이
 
-1. @inf073chk4를 트위터에 검색합니다  <https://twitter.com/inf073chk4>
+1. @inf073chk4를 트위터에 검색합니다  <https://twitter.com/inf073chk4>  
 이후 다음과 같은 정보를 볼 수 있습니다.
 
 <img src="https://penekhun.github.io/img/WuIMG/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202018-07-28%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.07.42.png" alt="one" style="width: 200px;height:300px"/>
