@@ -16,6 +16,7 @@ Github: [instagram.com/kgv0vc](http://instagram.com/kgv0vc)
 
 
 My Another Blog: [penek.tistory.com](http://penek.tistory.com)
+and this is my [Team Blog](http://demonteam.org)
 
 
 What else do you need?
