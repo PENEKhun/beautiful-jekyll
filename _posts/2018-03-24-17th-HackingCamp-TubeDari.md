@@ -32,16 +32,19 @@ pcapng 포맷은 기존 pcap 포맷보다 더 많은 정보들을 포함하고 �
 
 네트워크 패킷 파일 같은 경우에는 툴을 이용해서 분석하는 게 통상적입니다.  
 
-> 개인적으로 wireshark외에 패킷 분석 도구를 하나 추천해드리자면, [Network miner  ](http://www.netresec.com/?page=NetworkMiner)와 같은 툴을 사용하시면 툴 내에서 데이터를 보다 더 보기 편리하게 가공해 보여줌으로 분석이 보다 더 편할 수 있습니다.  
+> 개인적으로 wireshark외에 패킷 분석 도구를 하나 추천해드리자면,  
+[Network miner  ](http://www.netresec.com/?page=NetworkMiner)와 같은 툴을 사용하시면 툴 내에서 데이터를 보다 더 보기 편리하게 가공해 보여줌으로 분석이 보다 더 편할 수 있습니다.  
 ​
 제가 언급한 network miner와 같은 다른 패킷분석 도구는 추가적으로 포스팅해드리겠습니당.  
+  
 
 가장 대중적인 [wireshark](https://www.wireshark.org)라는 툴을 사용해 파일을 열어보겠습니다.  
 
 
 ![와샼으로 열어봄](https://demonteam.org/content/images/2018/03/-----------2018-03-24------4.04.24.png)
 
-문제 내에서 이미지 파일이라는 것 밖에 알려주지 않아서... 이미지 파일로 접근을 해야 될 것 같습니다.  
+문제 내에서 이미지 파일이라는 것 밖에 알려주지 않아서...  
+이미지 파일로 접근을 해야 될 것 같습니다.  
 
 wireshark내에서 HTTP, SMB프로토콜등에서 주고받은 파일을 추출하기 위해서는  
 File -> Export Objects -> 추출을 원하는 프로토콜을 이용하면 됩니다.  
@@ -72,8 +75,6 @@ HTML도큐멘트네요.
 
 
 
-
-*영어 잘하는 PENEKgod.... 당신은 도덕책!?*  
 
 ![-----------2018-03-24------5.55.37](https://demonteam.org/content/images/2018/03/-----------2018-03-24------5.55.37.png)
 
@@ -106,13 +107,15 @@ TubeDari라는 국제 테러단체 마크가 보이네요.
 스테가노그래피는 종류가 상당히 많습니다...  
 
 # 스태가노그래피의 쉬운 예  
-![원본](https://demonteam.org/content/images/2018/03/Test1.jpg)![EOI에 데이터 숨긴것](https://demonteam.org/content/images/2018/03/Test2.jpg)
+![원본](https://demonteam.org/content/images/2018/03/Test1.jpg)![EOI에 데이터 숨긴것](https://demonteam.org/content/images/2018/03/Test2.jpg)  
+
 위 이미지가 같은 이미지일까요? 왼쪽 이미지가 원본이고, 오른쪽 이미지가 EOI를 이용해 데이터를 숨긴 파일입니다.  
 
 여러 이미지 파일은 특정 바이트 값으로 시작하여 특정 바이트 값으로 끝납니다.  
 특히 JPG 파일은 FF D8로 시작하여 FF D9로 끝납니다.  
 그래서 JPG의 EOI(End of Image)는 FF D9가 되는데,,,  
 EOI 뒤부터는 이미지가 이미 끝난 후이므로 이후 데이터는 무시되기에, 아무 데이터나 적어도 됩니다!  
+
 가장 simple하죠?   
 
 실제로 오른쪽 사진은 아래와 같이 데이터를 숨겼습니다.  
@@ -127,7 +130,7 @@ EOI 뒤부터는 이미지가 이미 끝난 후이므로 이후 데이터는 무
 # 바로 결론으로 가서...  
 제가 문제를 만들당시 해당 이미지에 스태가노그래피를 적용할때 [Steganography online tool](http://stylesuxx.github.io/steganography/)를 사용했습니다.  
 
-해당 이미지에 적용한 스테가노그래피의 알고리즘을 [개발자 깃헙]  (https://github.com/stylesuxx/steganography/blob/gh-pages/script.js)을 통해 참고해서 일부만 보면...  
+해당 이미지에 적용한 스테가노그래피의 알고리즘을 [개발자 깃헙](https://github.com/stylesuxx/steganography/blob/gh-pages/script.js)을 통해 참고해서 일부만 보면...  
 ![code](https://demonteam.org/content/images/2018/03/-----------2018-03-24------5.26.11.png)
 다음과 같은식으로 데이터를 숨겨 putImageData를 하는것을 알수있습니다.  
 
