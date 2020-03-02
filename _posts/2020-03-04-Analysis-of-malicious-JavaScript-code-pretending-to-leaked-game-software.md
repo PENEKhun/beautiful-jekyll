@@ -7,6 +7,7 @@ tags:
   - Javascript
   - Analysis
   - Malware
+  - Research
 published: true
 ---
 
