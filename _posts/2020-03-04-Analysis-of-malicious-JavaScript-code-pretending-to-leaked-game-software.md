@@ -11,20 +11,10 @@ tags:
 published: true
 ---
 
-#### 유출된 유료 게임 소프트웨어를 가장한 악성 JavaScript에 대한 간단한 코드 분석
-
-Analysis of malicious JavaScript code pretending to leaked game software
-
-#### ##### 
-
-
 
 ##### 0. 시나리오
 
 추가예정.
-
-
-
 
 
 ```javascript
