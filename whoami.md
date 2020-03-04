@@ -5,8 +5,8 @@ subtitle: 'I want to be a great Hacker :>'
 published: true
 ---
 Hi, nice to meet you.
-I am **Moon Seong Hun**, 19 years old and live in Korea.
-
+I am **Moon Seong Hun**, 21 years old and live in Korea.
+majoring in information Security at Soonchunhyang University(**sch**).
 
 ### Contact information:
 
