@@ -1,7 +1,7 @@
 ---
 layout: post
-title: **Analysis of malicious JavaScript code pretending to leaked game software**
-subtitle: **유출된 유료 게임 소프트웨어를 가장한 악성 JavaScript에 대한 간단한 코드 분석**
+title: Analysis of malicious JavaScript code pretending to leaked game software
+subtitle: 유출된 유료 게임 소프트웨어를 가장한 악성 JavaScript에 대한 간단한 코드 분석
 excerpt: 유출된 유료 게임 소프트웨어를 가장한 악성 JavaScript에 대한 간단한 코드 분석
 tags:
   - Javascript
